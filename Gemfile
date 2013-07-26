@@ -25,3 +25,6 @@ gem 'shotgun'
   gem 'faker'
   gem 'rspec'
 # end
+
+# Twilio API
+gem 'twilio-ruby'
