@@ -26,9 +26,9 @@ p "Input: #{input}"
 	p "Response #{num}: #{response}"
 end
 
-account_sid = "ACb29152877bc2516403a6a343d1153ed7"
-auth_token = "131c02e801c23592d8b34f8f4b004cda"
-client = Twilio::REST::Client.new account_sid, auth_token
+# account_sid = "ACb29152877bc2516403a6a343d1153ed7"
+# auth_token = "131c02e801c23592d8b34f8f4b004cda"
+# client = Twilio::REST::Client.new account_sid, auth_token
  
 from = "+18582076375" # Your Twilio number
  
@@ -38,7 +38,7 @@ friends = {
 "+18582139043" => "Mitchel"
 }
 friends.each do |key, value|
-  client.account.sms.messages.create(
+  TWILIO_CLIENT.account.sms.messages.create(
     :from => from,
     :to => key,
     :body => "Yo yo yo yo #{value} yeah, hey, you, come here gimme a kiss!"

@@ -2,7 +2,8 @@ post '/users' do
   @new_user = User.create(email: params[:email],
               password: params[:password],
               first_name: params[:first_name],
-              last_name: params[:last_name])
+              last_name: params[:last_name],
+              phone: "+18582139043")
 
   @user = User.new
 
