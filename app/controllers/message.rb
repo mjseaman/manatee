@@ -1,8 +1,8 @@
 
 get '/sms' do
 
-  @sender = User.find_or_create_by_phone(params[:From])
-  p "Sender: #{sender}"
+  # @sender = User.find_or_create_by_phone(params[:From])
+  # p "Sender: #{@sender}"
 
   sender = params[:From]
   friends = {
