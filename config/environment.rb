@@ -34,3 +34,13 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+env_config = YAML.load_file(APP_ROOT.join('config', 'twilio.yaml'))
+
+env_config.each do |key, value|
+  ENV[key] = value
+end
+
+# set up a client to talk to the Twilio REST API
+TWILIO_CLIENT = Twilio::REST::Client.new(ENV[ACCOUNT_SID], ENV[AUTH_TOKEN])
+

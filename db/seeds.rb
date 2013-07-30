@@ -9,6 +9,23 @@ require 'faker'
 	p "user #{num}: #{user}"
 end
 
+mitch = User.create(
+	email: "mitchel.seaman@gmail.com",
+	first_name: "Mitch",
+	last_name: "Seaman",
+	password: "password",
+	phone: "+18582139043")
+
+input = Input.create(body: ":(")
+p "Input: #{input}"
+
+50.times do |num|
+	response = Response.create(body: Faker::Company.bs)
+	response.input = Input.find(1)
+	response.save
+	p "Response #{num}: #{response}"
+end
+
 account_sid = "ACb29152877bc2516403a6a343d1153ed7"
 auth_token = "131c02e801c23592d8b34f8f4b004cda"
 client = Twilio::REST::Client.new account_sid, auth_token

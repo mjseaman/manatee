@@ -9,6 +9,7 @@ class Message < ActiveRecord::Base
   	if User.find_by_phone(phone)
   		self.user = User.find_by_phone(phone)
   	end
+  	User.find_or_create_by_phone()
   end
   
 end
