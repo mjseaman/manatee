@@ -30,18 +30,19 @@ end
 # auth_token = "131c02e801c23592d8b34f8f4b004cda"
 # client = Twilio::REST::Client.new account_sid, auth_token
  
-from = "+18582076375" # Your Twilio number
+# from = "+18582076375" # Your Twilio number
  
-friends = {
+# friends = {
 # "+18582139043" => "Curious George",
 # "+14155557775" => "Boots",
-"+18582139043" => "Mitchel"
-}
-friends.each do |key, value|
-  TWILIO_CLIENT.account.sms.messages.create(
-    :from => from,
-    :to => key,
-    :body => "Yo yo yo yo #{value} yeah, hey, you, come here gimme a kiss!"
-  ) 
-  puts "Sent message to #{value}"
-end
+# "+18582139043" => "Mitchel"
+# }
+# friends.each do |key, value|
+#   TWILIO_CLIENT.account.sms.messages.create(
+#     :from => from,
+#     :to => key,
+#     :body => "Yo yo yo yo #{value} yeah, hey, you, come here gimme a kiss!"
+#   ) 
+#   puts "Sent message to #{value}"
+# end
+
