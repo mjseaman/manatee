@@ -2,9 +2,7 @@ class CreateMessages < ActiveRecord::Migration
   def change
   	create_table :messages do |t|
     	t.string :sid, unique: true							#A 34 character string that uniquely identifies this resource.
-			t.string :date_created									#The date that this resource was created, given in RFC 2822 format.
-			t.string :date_updated									#The date that this resource was last updated, given in RFC 2822 format.
-			t.string :date_sent											#The date that the SMS was sent. For incoming messages, this is the date that Twilio received the SMS. The date is given in RFC 2822 format.
+			t.date :date_sent												#The date that the SMS was sent. For incoming messages, this is the date that Twilio received the SMS. The date is given in RFC 2822 format.
 			t.string :account_sid										#The unique id of the Account that sent this SMS message.
 			t.string :from													#The phone number that initiated the message in E.164 format. For incoming messages, this will be the remote phone. For outgoing messages, this will be one of your Twilio phone numbers.
 			t.string :to														#The phone number that received the message in E.164 format. For incoming messages, this will be one of your Twilio phone numbers. For outgoing messages, this will be the remote phone.
