@@ -42,5 +42,5 @@ env_config.each do |key, value|
 end
 
 # set up a client to talk to the Twilio REST API
-TWILIO_CLIENT = Twilio::REST::Client.new(ENV[ACCOUNT_SID], ENV[AUTH_TOKEN])
+TWILIO_CLIENT = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
 
