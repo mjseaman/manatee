@@ -14,6 +14,7 @@ class CreateMessages < ActiveRecord::Migration
 			t.string :api_version										#The version of the Twilio API used to process the SMS message.
 			t.string :uri														#The URI for this resource, relative to https://api.twilio.com
 			t.belongs_to :user
+			t.belongs_to :input
 			t.timestamps
 		end
   end

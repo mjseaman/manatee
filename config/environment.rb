@@ -20,6 +20,8 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 
+require 'csv'
+
 # Twilio for SMS integration
 require 'twilio-ruby'
 
@@ -46,9 +48,9 @@ TWILIO_CLIENT = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
 
 p ENV['FROM']
 
-TWILIO_CLIENT.account.sms.messages.create(
-    :from => ENV['FROM'],
-    :to => "+18582139043",
-    :body => "Up and running brah!"
-  ) 
+# TWILIO_CLIENT.account.sms.messages.create(
+#     :from => ENV['FROM'],
+#     :to => "+18582139043",
+#     :body => "Up and running brah!"
+#   ) 
 
