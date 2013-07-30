@@ -14,16 +14,9 @@ get '/sms' do
 
   p Response.all.sample.body
 
-  sender = params[:From]
-  friends = { "+18582139043" => "Mitch" }
-  name = friends[sender] || "Mobile Monkey"
   twiml = Twilio::TwiML::Response.new do |r|
     r.Sms "#{Response.all.sample.body}"
   end
   twiml.text
-  p "*" * 30
-  p "The twiml"
-  p "*" * 30
-  p twiml.text
-  p "*" * 30
+
 end
